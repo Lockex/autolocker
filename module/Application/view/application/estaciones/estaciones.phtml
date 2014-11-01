@@ -1,0 +1,80 @@
+
+<div class="col-lg-12" style="margin-bottom:20px">
+    <button type="button" class="btn btn-primary" onclick="modalCrearEstacion()">Crear estación</button>    
+</div>
+<div class="col-sm-6" id="divTablaEstaciones">
+       
+</div>
+<div class="modal fade" id="modalCrearEstacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body" id="crearEstacionBody">
+        
+      </div>
+      <div class="modal-footer" id="crearEstacionFooter">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarEstacion()">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function() {
+  listaEstaciones();
+});
+    function listaEstaciones() {
+      $.ajax({
+                type: "GET",
+                url: "<?php echo $this->basePath() ?>/estaciones/listaestaciones",
+                dataType: "html",
+                beforeSend: function() {
+                  $("#divTablaEstaciones").html('<div class="progress"><div class="progress-bar progress-bar-striped active"  role="progressbar" style="width: 100%"></div></div>');
+                },
+                success: function(data) {
+                        $("#divTablaEstaciones").html(data);
+                      },
+                error: function(data){
+                    alert('Error');
+                }
+        });
+    }
+
+    function modalCrearEstacion(){
+        $.ajax({
+                type: "GET",
+                url: "<?php echo $this->basePath() ?>/estaciones/crearestacion",
+                dataType: "html",
+                beforeSend: function() {
+                  $('#modalCrearEstacion').modal('show');
+                  $("#crearEstacionBody").html('<div class="progress"><div class="progress-bar progress-bar-striped active"  role="progressbar" style="width: 100%"></div></div>');
+                },
+                success: function(data) {
+                        $("#crearEstacionBody").html(data);
+                      },
+                error: function(data){
+                    alert('Error');
+                }
+        });
+    }
+    function modalEditarEstacion(idEstacion){
+        $.ajax({
+                type: "GET",
+                url: "<?php echo $this->basePath() ?>/estaciones/crearestacion/"+idEstacion,
+                dataType: "html",
+                beforeSend: function() {
+                  $('#modalCrearEstacion').modal('show');
+                  $("#crearEstacionBody").html('<div class="progress"><div class="progress-bar progress-bar-striped active"  role="progressbar" style="width: 100%"></div></div>');
+                },
+                success: function(data) {
+                        $("#crearEstacionBody").html(data);
+                      },
+                error: function(data){
+                    alert('Error');
+                }
+        });
+    }
+</script>

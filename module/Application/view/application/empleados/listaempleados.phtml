@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <th>Nombre</th>
+    <th>Estado</th>
+  </thead>
+  <tbody>
+    <?php foreach ($empleados as $empleado) { ?>
+        <tr>
+          <td><?php echo $empleado['NOMBRE'].' '.$empleado['APELLIDO_PATERNO'].' '.$empleado['APELLIDO_MATERNO']; ?></td>
+          <td><?php if($empleado['STATUS'] == true) { ?>
+          <span class="label label-success">Activo</span>
+          <?php } else { ?>
+          <span class="label label-danger">Inactivo</span>
+          <?php } ?>
+          <span class="glyphicon glyphicon-edit" style="color:dodgerblue;float:right;cursor:pointer" onclick="modalEditarEmpleado(<?php echo $empleado['ID'] ?>)"></span></td>
+        </tr>
+    <?php } ?>
+  </tbody>
+</table> 
