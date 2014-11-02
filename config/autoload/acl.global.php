@@ -75,6 +75,9 @@ return array(
 				'Application\Controller\Empleados' => array(
 						'all' => 'guest'
 				),
+				'Application\Controller\Estadisticas' => array(
+						'all' => 'guest'
+				),
 				'CsnCms\Controller\Article' => array(
 					'view'	=> 'guest',
 					'vote'  => 'Member',

@@ -7,6 +7,41 @@ body {
     color: #68b604;
 }
 
+.panel-morado {
+  border-color: #4E3FA9;
+}
+
+.panel-morado .panel-heading {
+  color: #fff;
+  background-color: #4E3FA9;
+}
+
+.panel-verde {
+  border-color: #21b384;
+}
+
+.panel-verde .panel-heading {
+  color: #fff;
+  background-color: #21b384;
+}
+
+.panel-rojo {
+  border-color: #D54545;
+}
+
+.panel-rojo .panel-heading {
+  color: #fff;
+  background-color: #D54545;
+}
+.contenedor {
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #eee;
+  margin: 10px 0;
+  position: relative;
+}
+
+
 .btn-success {
   background-color: #57a900;
   background-image: -moz-linear-gradient(top, #70d900, #57a900);

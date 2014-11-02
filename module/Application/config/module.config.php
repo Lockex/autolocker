@@ -80,6 +80,21 @@ return array(
                 ),
                 'may_terminate' => true,
             ),
+            'estadisticas' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/estadisticas[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id' => '[a-zA-Z0-9]*',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Estadisticas',
+                        'action' => 'estadisticas',
+                    ),
+                ),
+                'may_terminate' => true,
+            ),
         ),
     ),
     'service_manager' => array(
@@ -106,7 +121,8 @@ return array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'CsnUser\Controller\Index' => 'CsnUser\Controller\IndexController',
             'Application\Controller\Estaciones' => 'Application\Controller\EstacionesController',
-            'Application\Controller\Empleados' => 'Application\Controller\EmpleadosController'
+            'Application\Controller\Empleados' => 'Application\Controller\EmpleadosController',
+            'Application\Controller\Estadisticas' => 'Application\Controller\EstadisticasController',
         ),
     ),
     'view_manager' => array(

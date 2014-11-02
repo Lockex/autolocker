@@ -7,6 +7,7 @@ return array(
         'DoctrineORMModule',
         'CsnUser',
         'CsnAuthorization',
+        'ZendDeveloperTools'
     ),
 
     // These are various options for the listeners attached to the ModuleManager
