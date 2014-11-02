@@ -1,11 +1,11 @@
-<table class="table">
+<table class="table table-hover">
   <thead>
     <th>Nombre</th>
     <th>Estado</th>
   </thead>
   <tbody>
-    <?php foreach ($empleados as $empleado) { ?>
-        <tr>
+    <?php $x = 0; foreach ($empleados as $empleado) { ?>
+        <tr onclick="selecttr(this)" idempleado="<?php echo $x ?>">
           <td><?php echo $empleado['NOMBRE'].' '.$empleado['APELLIDO_PATERNO'].' '.$empleado['APELLIDO_MATERNO']; ?></td>
           <td><?php if($empleado['STATUS'] == true) { ?>
           <span class="label label-success">Activo</span>
@@ -14,6 +14,17 @@
           <?php } ?>
           <span class="glyphicon glyphicon-edit" style="color:dodgerblue;float:right;cursor:pointer" onclick="modalEditarEmpleado(<?php echo $empleado['ID'] ?>)"></span></td>
         </tr>
-    <?php } ?>
+    <?php $x++; } ?>
   </tbody>
-</table> 
+</table>
+<script type="text/javascript">
+  var empleados = jQuery.parseJSON('<?php echo $objEmpleados ?>');
+  function selecttr (tr) {
+    idEmpleado = $(tr).attr('idempleado');
+    $(tr).siblings().removeClass('active');
+    $(tr).addClass('active');
+    $('#pNombreEmpleado').text(empleados[idEmpleado].NOMBRE+' '+empleados[idEmpleado].APELLIDO_PATERNO+' '+empleados[idEmpleado].APELLIDO_MATERNO);
+    $('#pNumero').text(empleados[idEmpleado].LATITUD);
+    $('#pLaborales').text(empleados[idEmpleado].LONGITUD);
+  }
+</script> 

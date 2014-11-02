@@ -38,7 +38,8 @@ class EstacionesController extends AbstractActionController
     	$this->layout('layout/vacio');
     	$query = $this->getObjectManager()->createQuery("SELECT e FROM CsnUser\Entity\Estaciones e");
     	$estaciones = $query->getArrayResult();
-    	$resultado = array('estaciones' => $estaciones);
+        $objEstaciones = json_encode($estaciones);
+    	$resultado = array('estaciones' => $estaciones,'objEstaciones' => $objEstaciones);
     	return new ViewModel($resultado);
     }
 

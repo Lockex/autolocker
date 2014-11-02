@@ -41,7 +41,8 @@ class EmpleadosController extends AbstractActionController
     	$query = $this->getObjectManager()->createQuery("SELECT em.NOMBRE,em.APELLIDO_PATERNO,em.APELLIDO_MATERNO,em.STATUS,em.ID FROM 
             CsnUser\Entity\Empleados em WHERE em.JEFE =".$this->identity()->getId());
     	$empleados = $query->getArrayResult();
-    	$resultado = array('empleados' => $empleados);
+      $objEmpleados = json_encode($empleados);
+    	$resultado = array('empleados' => $empleados, 'objEmpleados' => $objEmpleados);
     	return new ViewModel($resultado);
     }
 

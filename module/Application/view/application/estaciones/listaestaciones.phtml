@@ -1,11 +1,11 @@
-<table class="table">
+<table class="table table-hover">
   <thead>
     <th>Estación</th>
     <th>Estado</th>
   </thead>
   <tbody>
-    <?php foreach ($estaciones as $estacion) { ?>
-        <tr>
+    <?php $x=0; foreach ($estaciones as $estacion) { ?>
+        <tr onclick="selecttr(this)" idestacion="<?php echo $x ?>">
           <td><?php echo $estacion['NOMBRE']; ?></td>
           <td><?php if($estacion['ESTADO']) { ?>
           <span class="label label-success">Activo</span>
@@ -14,6 +14,20 @@
           <?php } ?>
           <span class="glyphicon glyphicon-edit" style="color:dodgerblue;float:right;cursor:pointer" onclick="modalEditarEstacion(<?php echo $estacion['ID'] ?>)"></span></td>
         </tr>
-    <?php } ?>
+    <?php $x++; } ?>
   </tbody>
-</table> 
+</table>
+<script type="text/javascript">
+  var estaciones = jQuery.parseJSON('<?php echo $objEstaciones ?>');
+  console.log(estaciones);
+  function selecttr (tr) {
+    idEstacion = $(tr).attr('idestacion');
+    $(tr).siblings().removeClass('active');
+    $(tr).addClass('active');
+    $('#pNombreEstacion').text(estaciones[idEstacion].NOMBRE);
+    $('#pLat1').text(estaciones[idEstacion].LATITUD);
+    $('#pLon1').text(estaciones[idEstacion].LONGITUD);
+    $('#pLat2').text(estaciones[idEstacion].LATITUD2);
+    $('#pLon2').text(estaciones[idEstacion].LONGITUD2);
+  }
+</script> 
