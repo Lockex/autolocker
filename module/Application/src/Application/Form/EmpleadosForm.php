@@ -89,8 +89,286 @@ class EmpleadosForm extends Form
                 ),
             ));
            
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'LUNES',
+                'options' => array(
+                     'label' => 'Lunes: ',
+                     'use_hidden_element' => true,
+                ),
+                'attributes' => array(
+                    'id' => 'LUNES',
+                    'class' => 'check',
+                ),
+            ));
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'MARTES',
+                'options' => array(
+                     'label' => 'Martes: ',
+                     'use_hidden_element' => true,
+                     'checked_value' => true,
+                     'unchecked_value' => false
+                ),
+                'attributes' => array(
+                    'id' => 'MARTES',
+                    'class' => 'check',
+                ),
+            ));
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'MIERCOLES',
+                'options' => array(
+                     'label' => 'Miércoles: ',
+                     'use_hidden_element' => true,
+                     'checked_value' => true,
+                     'unchecked_value' => false
+                ),
+                'attributes' => array(
+                    'id' => 'MIERCOLES',
+                    'class' => 'check',
+                ),
+            ));
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'JUEVES',
+                'options' => array(
+                     'label' => 'Jueves: ',
+                     'use_hidden_element' => true,
+                     'checked_value' => true,
+                     'unchecked_value' => false
+                ),
+                'attributes' => array(
+                    'id' => 'JUEVES',
+                    'class' => 'check',
+                ),
+            ));
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'VIERNES',
+                'options' => array(
+                     'label' => 'Viernes: ',
+                     'use_hidden_element' => true,
+                     'checked_value' => true,
+                     'unchecked_value' => false
+                ),
+                'attributes' => array(
+                    'id' => 'VIERNES',
+                    'class' => 'check',
+                ),
+            ));
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'SABADO',
+                'options' => array(
+                     'label' => 'Sábado: ',
+                     'use_hidden_element' => true,
+                     'checked_value' => true,
+                     'unchecked_value' => false
+                ),
+                'attributes' => array(
+                    'id' => 'SABADO',
+                    'class' => 'check',
+                ),
+            ));
+            $this->add(array(
+                'type' => 'Zend\Form\Element\Checkbox',
+                'name' => 'DOMINGO',
+                'options' => array(
+                     'label' => 'Domingo: ',
+                     'use_hidden_element' => true,
+                     'checked_value' => true,
+                     'unchecked_value' => false
+                ),
+                'attributes' => array(
+                    'id' => 'DOMINGO',
+                    'class' => 'check',
+                ),
+            ));
             
-            
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_LUNES',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_LUNES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_LUNES',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_LUNES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_MARTES',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_MARTES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_MARTES',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_MARTES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_MIERCOLES',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_MIERCOLES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_MIERCOLES',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_MIERCOLES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_JUEVES',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_JUEVES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_JUEVES',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_JUEVES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_VIERNES',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_VIERNES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_VIERNES',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_VIERNES', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_SABADO',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_SABADO', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_SABADO',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_SABADO', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'I_DOMINGO',
+                 'options'=> array(
+                         'label' => 'Entrada:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'I_DOMINGO', // seconds; default step interval is 60 seconds
+                 )
+             ));
+            $this->add(array(
+                 'type' => 'Zend\Form\Element\Time',
+                 'name' => 'F_DOMINGO',
+                 'options'=> array(
+                         'label' => 'Salida:'
+                 ),
+                 'attributes' => array(
+                         'min' => '00:00:00',
+                         'max' => '23:59:59',
+                         'step' => '60', 'class' => 'form-control',
+                         'id' => 'F_DOMINGO', // seconds; default step interval is 60 seconds
+                 )
+             ));
+
         // … add CSRF and submit elements …
 
         // Optionally set your validation group here

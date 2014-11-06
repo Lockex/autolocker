@@ -1,6 +1,7 @@
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+    background-color: #f7f7f7;
 }
 
 .zf-green {
@@ -26,12 +27,12 @@ body {
 }
 
 .panel-rojo {
-  border-color: #D54545;
+  border-color: #FF6437;
 }
 
 .panel-rojo .panel-heading {
   color: #fff;
-  background-color: #D54545;
+  background-color: #FF6437;
 }
 .contenedor {
   padding: 30px;
@@ -39,6 +40,7 @@ body {
   box-shadow: 1px 1px 2px #eee;
   margin: 10px 0;
   position: relative;
+  background-color: #fff;
 }
 
 

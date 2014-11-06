@@ -22,9 +22,85 @@
 		<div class="col-lg-6">
 			<?php echo $this->formRow($form->get('NUMERO')); ?>
 		</div>
-		
 	</div>
-	
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('LUNES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_LUNES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_LUNES')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('MARTES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_MARTES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_MARTES')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('MIERCOLES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_MIERCOLES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_MIERCOLES')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('JUEVES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_JUEVES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_JUEVES')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('VIERNES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_VIERNES')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_VIERNES')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('SABADO')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_SABADO')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_SABADO')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="vertical-align:center">
+			<?php echo $this->formRow($form->get('DOMINGO')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('I_DOMINGO')); ?>
+		</div>
+		<div class="col-sm-3">
+			<?php echo $this->formRow($form->get('F_DOMINGO')); ?>
+		</div>
+	</div>
+
 </div>
 <div class="progress" style="display:none" id="barraCargando">
   <div class="progress-bar progress-bar-striped active"  role="progressbar" style="width: 100%">
@@ -50,4 +126,17 @@
                 }
         });
 	}
+
+	$('.check').click(function(){
+		var dia = $(this).attr('id');
+		alert($('#MARTES').val());
+		if($(this).val() == true ) {
+			$('#I_'+dia).val('09:00:00');
+			$('#F_'+dia).val('18:00:00');	
+		} else if($(this).val() == false ) {
+			$('#I_'+dia).val('07:00:00');
+			$('#F_'+dia).val('11:00:00');	
+		}
+		
+	});
 </script>

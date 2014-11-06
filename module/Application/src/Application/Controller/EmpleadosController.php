@@ -68,6 +68,7 @@ class EmpleadosController extends AbstractActionController
                 $data = $form->getData(FormInterface::VALUES_AS_ARRAY);
                 $empleado = $hydrator->hydrate($data,$empleado);
                 $empleado->setJEFE($em->find('CsnUser\Entity\User',$this->identity()->getId()));
+                $empleado->setSTATUS(0);
                 if($id) {
                     $empleado->setID($id);
                     $em->merge($empleado);

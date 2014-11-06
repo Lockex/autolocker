@@ -79,6 +79,7 @@ class EstacionesController extends AbstractActionController
                 $data = $form->getData(FormInterface::VALUES_AS_ARRAY);
                 $estaciones = $hydrator->hydrate($data,$estaciones);
                 $estaciones->setEstado(true);
+                $estaciones->setUSUARIO($this->getObjectManager()->find('CsnUser\Entity\User',$this->identity()->getId());
                 if($id) {
                 	$estaciones->setID($id);
                 	$this->getObjectManager()->merge($estaciones);
