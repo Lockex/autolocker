@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('LUNES')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -35,7 +35,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('MARTES')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('MIERCOLES')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('JUEVES')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -68,7 +68,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('VIERNES')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -79,7 +79,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('SABADO')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6" style="vertical-align:center">
+		<div class="col-sm-6" style="margin-top:25px">
 			<?php echo $this->formRow($form->get('DOMINGO')); ?>
 		</div>
 		<div class="col-sm-3">
@@ -107,11 +107,13 @@
   </div>
 </div>
 <script>
-
+$(document).ready(function(){
+	$("#LUNES").val('1');
+});
 	function guardarEmpleado () {
 		$.ajax({
                 type: "POST",
-                url: "<?php echo $this->basePath() ?>/empleados/nuevoempleado/",
+                url: "<?php echo $this->basePath() ?>/empleados/nuevoempleado/<?php if ($id) {echo $id;} ?>",
                 dataType: "json",
            		data: $('#empleados').serialize(),
            		beforeSend: function() {
@@ -119,7 +121,7 @@
                 },
                 success: function(data) {
                   $('#modalCrearEmpleado').modal('hide');
-                  listaEmpleado();  
+                  listaEmpleados();  
                 },
                 error: function(data){
                     alert('Error');
@@ -129,7 +131,6 @@
 
 	$('.check').click(function(){
 		var dia = $(this).attr('id');
-		alert($('#MARTES').val());
 		if($(this).val() == true ) {
 			$('#I_'+dia).val('09:00:00');
 			$('#F_'+dia).val('18:00:00');	

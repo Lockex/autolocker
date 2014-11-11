@@ -54,7 +54,7 @@ $(document).ready(function() {
         });
     }
 
-    function modalCrearEmpleado(){
+    function modalCrearEmpleado() {
         $.ajax({
                 type: "GET",
                 url: "<?php echo $this->basePath() ?>/empleados/nuevoempleado",
@@ -66,15 +66,15 @@ $(document).ready(function() {
                 success: function(data) {
                         $("#crearEmpleadoBody").html(data);
                       },
-                error: function(data){
+                error: function(data) {
                     alert('Error');
                 }
         });
     }
-    function modalEditarEstacion(idEmpleado){
+    function modalEditarEmpleado(idEmpleado){
         $.ajax({
                 type: "GET",
-                url: "<?php echo $this->basePath() ?>/empleados/crearempleado/"+idEmpleado,
+                url: "<?php echo $this->basePath() ?>/empleados/nuevoempleado/"+idEmpleado,
                 dataType: "html",
                 beforeSend: function() {
                   $('#modalCrearEmpleado').modal('show');

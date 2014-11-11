@@ -94,7 +94,7 @@ class EmpleadosForm extends Form
                 'name' => 'LUNES',
                 'options' => array(
                      'label' => 'Lunes: ',
-                     'use_hidden_element' => true,
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'LUNES',
@@ -102,13 +102,12 @@ class EmpleadosForm extends Form
                 ),
             ));
             $this->add(array(
+                'required' => false,
                 'type' => 'Zend\Form\Element\Checkbox',
                 'name' => 'MARTES',
                 'options' => array(
                      'label' => 'Martes: ',
-                     'use_hidden_element' => true,
-                     'checked_value' => true,
-                     'unchecked_value' => false
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'MARTES',
@@ -120,9 +119,7 @@ class EmpleadosForm extends Form
                 'name' => 'MIERCOLES',
                 'options' => array(
                      'label' => 'Miércoles: ',
-                     'use_hidden_element' => true,
-                     'checked_value' => true,
-                     'unchecked_value' => false
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'MIERCOLES',
@@ -134,9 +131,7 @@ class EmpleadosForm extends Form
                 'name' => 'JUEVES',
                 'options' => array(
                      'label' => 'Jueves: ',
-                     'use_hidden_element' => true,
-                     'checked_value' => true,
-                     'unchecked_value' => false
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'JUEVES',
@@ -148,9 +143,7 @@ class EmpleadosForm extends Form
                 'name' => 'VIERNES',
                 'options' => array(
                      'label' => 'Viernes: ',
-                     'use_hidden_element' => true,
-                     'checked_value' => true,
-                     'unchecked_value' => false
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'VIERNES',
@@ -162,9 +155,7 @@ class EmpleadosForm extends Form
                 'name' => 'SABADO',
                 'options' => array(
                      'label' => 'Sábado: ',
-                     'use_hidden_element' => true,
-                     'checked_value' => true,
-                     'unchecked_value' => false
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'SABADO',
@@ -176,9 +167,7 @@ class EmpleadosForm extends Form
                 'name' => 'DOMINGO',
                 'options' => array(
                      'label' => 'Domingo: ',
-                     'use_hidden_element' => true,
-                     'checked_value' => true,
-                     'unchecked_value' => false
+                     'use_hidden_element' => false,
                 ),
                 'attributes' => array(
                     'id' => 'DOMINGO',
@@ -368,10 +357,117 @@ class EmpleadosForm extends Form
                          'id' => 'F_DOMINGO', // seconds; default step interval is 60 seconds
                  )
              ));
-
+            $this->agregarFiltro();
         // … add CSRF and submit elements …
 
         // Optionally set your validation group here
+    }
+
+    private function agregarFiltro() {
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'LUNES',
+            'required' => false,
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_LUNES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_LUNES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'MARTES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_MARTES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_MARTES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'MIERCOLES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_MIERCOLES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_MIERCOLES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'JUEVES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_JUEVES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_JUEVES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'VIERNES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_VIERNES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_VIERNES',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'SABADO',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_SABADO',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_SABADO',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'DOMINGO',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'I_DOMINGO',
+            'required' => false,
+            
+        )));
+        $this->getInputFilter()->add($this->getInputFilter()->getFactory()->createInput(array(
+            'name'     => 'F_DOMINGO',
+            'required' => false,
+            
+        )));
     }
     
 }
